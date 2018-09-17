@@ -1,9 +1,21 @@
-#include <iostream>
+#include<iostream>
+#include<fstream>
+#include<sstream>
+using namespace std;	
 
-int
-main()
-{
-  // TODO
+int main() {
+ 	
+	ifstream infile ("input2.txt");
+    string str;
+    getline (infile, str);
+	stringstream sstr(str);
+	int x;
+	int sum;	
+	while (sstr >> x) {
+		sum += x;	
+	}
 
-  return 0;
+	cout << "The sum is: " << sum << endl;
+
+
 }

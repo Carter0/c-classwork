@@ -1,9 +1,32 @@
 #include <iostream>
+using namespace std;	
 
-int
-main()
-{
-  // TODO
 
-  return 0;
+int fib (int n) {
+        if (n == 1) {
+                return 1;
+        }       
+        else if (n == 2) {
+				 return 1;
+        } else {
+               return  fib (n - 1) + fib (n - 2);
+        }
+
 }
+
+int main() {
+  	int n;
+	cout << "Enter an integer value: ";
+  	cin >> n;
+  	if (n <= 0) {
+    		cout << "Input cannot be less than or equal to 0.";
+  	}
+
+	for (int i = 1; i <= n; i++) {
+		cout << fib(i) << endl;
+	}
+  	
+	return 0;
+}
+
+
