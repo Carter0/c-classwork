@@ -1,0 +1,72 @@
+Input/Output streams
+
+Included with IOStream 
+cerr 
+cout
+cin
+
+For Files
+ifstream - read from file
+ofstream - write to file 
+
+<< >> stream out and in operators 
+
+
+Also, getline function 
+getline (stream, string)
+	- reads in an entire line  
+
+
+Converting string to int 
+include sstream
+get an input string with getline
+
+stringstream sstr(numbers) -> makes a stream from a string
+int x;
+sstr >> x;
+
+cout << "the number is " << c << endl;
+
+
+for many ints and not just one
+while (sstr >> x) {
+	cout << "the number is " << x << endl;
+}
+
+
+to reset the sstr, there might be a reset fx
+
+
+
+
+for the ifstream example 
+
+int main () {
+	ifstream infile ("input.txt");
+	string str;
+	while(getline (infile, str)) {
+		cout << str << endl;
+	}
+}
+
+
+
+for loop shenanigans
+	vector <int> v = {1, 2, 3, 4, 5};
+	for (vector<int>::size_type i = 0; i < v.size(); i++) {
+		cout << v[i] << endl;
+	}
+
+	OR
+
+	for (int e : v) {
+		cout << e << endl;
+	}
+
+
+
+
+
+
+
+
