@@ -1,7 +1,7 @@
 /*
  * Java: There was a stack overflow error.
  * C++: It seg faulted when it tried to return 0.0.  
- * C++ Explanation: Ask later Carter TODO 
+ * C++ Explanation: I believe this is another similar kind of error to Stack Overflow in Java. Here it just cannot process all of the data on the stack.  
  */
 #include <iostream>
 using namespace std;
