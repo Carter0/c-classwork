@@ -1,0 +1,39 @@
+Q1: Compile and run the program using gdb.  Determine the following
+values:
+
+In the call to foo3, the value of x[33] when the function returns: 0
+In the call to foo5, the value of x[i-1] the first time i == 7: []
+In the call to foo22, the value of *s2 the third time *s3 == ' ': []
+In the call to foo6, the value of x[0] the first time z3 == 3 and z4 == 4: []
+
+
+
+Q2: Compile and run the program using Valgrind. Find three *different
+types* of memory errors, describing the line numbers, variables involved,
+and where memory was allocated, if relevant.
+
+On line 40, mismatched delete of pc, which was allocated on line 39.
+[]
+[]
+[]
+
+
+
+Q3: Compile and run the program using gprof (without optimizations -O0).
+List the top 4 functions that the program spends its time in.
+
+fe1(char const*)
+[]
+[]
+[]
+
+
+
+Q4: Compile and run the program using gcov.  For the lines marked with
+comments LINE-A, LINE-B, LINE-C and LINE-D, determine how many times
+each line was executed.
+
+LINE-A: 21
+LINE-B: []
+LINE-C: []
+LINE-D: []
