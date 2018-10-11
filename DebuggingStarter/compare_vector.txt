@@ -1,0 +1,18 @@
+Of the two functions which both use different ways of accessing elements in a vector, bracket access
+notation seems to be faster according to gprof.
+
+
+Some relevant information...
+
+Firstly, here is the time for the at notation
+
+    33.3                outPutAt(std::vector<int, std::allocator<int> >) [3]
+
+
+Secondly, here is the time for Bracket notation
+
+    4.8    0.00    0.00       1         outPutBr(std::vector<int, std::allocator<int> >) [13]
+
+
+
+This seems to be because at() because at() does out of bounds checking whereas bracket notation does not. 

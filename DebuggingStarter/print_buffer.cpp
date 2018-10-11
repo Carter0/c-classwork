@@ -11,6 +11,7 @@ class CStringBuffer {
 public:
   // construct a new buffer that is empty
   CStringBuffer() {
+      buffer = new char[0];
   }
 
   // destruct buffer and free resources

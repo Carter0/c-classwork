@@ -1,5 +1,5 @@
-CPPFLAGS=
-LDFLAGS=
+CPPFLAGS=-ggdb -pg
+LDFLAGS=-pg
 
 #CPPFLAGS=-ggdb -O0 -fno-inline
 #LDFLAGS=
@@ -15,10 +15,10 @@ PROGRAMS=check compare_vector print_buffer
 all: $(PROGRAMS)
 
 $(PROGRAMS): %: %.o
-	g++ $(LDFLAGS) -std=c++11 $< -o $@
+	g++ $(LDFLAGS) -std=c++11 $< -o $@ 
 
 %.o: %.cpp Makefile
-	g++ $(CPPFLAGS) -std=c++11 -c $< -o $@
+	g++ $(CPPFLAGS) -std=c++11 -c $< -o $@ 
 
 clean:
 	rm -f $(PROGRAMS) *.o *.gcda *.gcno *.gcov gmon.out

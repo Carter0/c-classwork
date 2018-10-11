@@ -1,0 +1,493 @@
+        -:    0:Source:check.cpp
+        -:    0:Graph:check.gcno
+        -:    0:Data:check.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include <iostream>
+        -:    2:#include <cstring>
+        -:    3:#include <stdio.h>
+        -:    4:using namespace std;
+        -:    5:
+        -:    6:struct X {
+        -:    7:  unsigned int num_x;  
+        -:    8:  unsigned int max_x; 
+        -:    9:  char **l;  
+        -:   10:};
+        -:   11:
+        -:   12:X * fe1(const unsigned int); 
+        -:   13:X * fe1(const char x[]); 
+        -:   14:int fe2(X *w_l); 
+        -:   15:int fe3(X *w_l); 
+        -:   16:int fi1(X *w_l, const char x[]); 
+        -:   17:int fi1(X *dst_l, const X *src_l);
+        -:   18:char* fi2(const X *w_l, const char word[]);
+        -:   19:int fi3(const X *w_l, const char word[], char *&s_ptr, char *&e_ptr); //2
+        -:   20:int fo1(X *w_l, const char word[]); 
+        -:   21:int fo2(X *w_l);
+        -:   22:int fo3(X *w_l); 
+        -:   23:int fum1(X *w_l); 
+        -:   24:void fum2(char *& p1, char *& p2);
+        -:   25:bool fum3(char);
+        -:   26:void foo2();
+        -:   27:void foo3();
+        -:   28:void foo4();
+        -:   29:void foo5(int);
+        -:   30:void foo6();
+        -:   31:void foo22(char *);
+        -:   32:const int MX = 33;
+        -:   33:
+        1:   34:int main()
+        -:   35:{
+        -:   36:  char *pc, *dp;
+        1:   37:  int *pi, sz=333;
+        1:   38:  pc = new char[19];
+        1:   39:  pc = new char[11];
+        1:   40:  delete pc;
+        1:   41:  pc = new char[5];
+        1:   42:  char *s = new char[5];
+        1:   43:  delete s;
+        1:   44:  char *a = new char[111];
+        1:   45:  foo2();
+        1:   46:  foo3();
+        1:   47:  foo4();
+        1:   48:  int n = 9;
+        1:   49:  foo5(n);
+        1:   50:  foo6();
+        -:   51:  X *pok, *tb;
+        -:   52:  char *word;
+        1:   53:  int ok=0;
+        1:   54:  string poke="charmeleon mewtwo pikachu charmander squirtle caterpie raichu butterfree abra kadabra alakazam slowpoke spoink";
+        1:   55:  char team_a[]="rayquaza mew snorlax";
+        2:   56:  string team_b="weavile shuckle ampharos toxicroak mrmime";
+        1:   57:  cout << poke.c_str() << endl;
+        1:   58:  pok=fe1(5);
+        1:   59:  ok=fe2(pok);
+        1:   60:  cout << "OK? "<< ok << endl;
+        1:   61:  pok=fe1(poke.c_str());
+        1:   62:  tb=fe1(team_a);
+        1:   63:  cout << "*pok"<< endl;
+        1:   64:  fe3(pok);
+        1:   65:  cout << "*tb"<< endl;
+        1:   66:  fe3(tb);
+        1:   67:  cout << fum1(pok)<< endl;
+        1:   68:  fe3(pok);
+        -:   69:
+        1:   70:  cout << team_a << endl;
+        1:   71:  foo22(team_a);
+        1:   72:  cout << team_a << endl;
+        -:   73:
+        2:   74:  return 0;
+        -:   75:}
+        -:   76:
+        1:   77:void foo22(char *s)
+        -:   78:{
+     2501:   79:  for (int ii = -1500; ii < 1000; ++ ii) {
+    52500:   80:    for (char * s1 = s; *s1 != 0; ++ s1) {
+   575000:   81:      for (char * s2 = s1; *s2 != 0; ++ s2) {
+  4375000:   82:	for (char * s3 = s2; *s3 != 0; ++ s3) {
+ 25987500:   83:	  for (char * s4 = s3; *s4 != 0; ++ s4) {
+ 22137500:   84:	    char tmp = *s1;
+ 22137500:   85:	    *s1 = *s2;
+ 22137500:   86:	    *s2 = *s3;
+ 22137500:   87:	    *s3 = *s4;
+ 22137500:   88:	    *s4 = tmp;
+        -:   89:	  }
+        -:   90:	}
+        -:   91:      }
+        -:   92:    }
+        -:   93:  }
+        1:   94:}
+        -:   95:
+        1:   96:void foo2()
+        -:   97:{
+    10001:   98:  for (int ii = 0; ii < 10000; ++ ii) {
+    10000:   99:    for (int jj = 0; jj < ii; ++ jj) {
+        -:  100:    }
+        -:  101:  }
+        1:  102:  char *ps = new char[33];
+        1:  103:  return;
+        -:  104:}
+        -:  105:
+        1:  106:void foo3()
+        -:  107:{
+        1:  108:  int* x = new int[33];
+        1:  109:  x[33] = 0;  
+        1:  110:}
+        -:  111:
+        1:  112:void foo4() {
+        -:  113:  char *ptr;
+        1:  114:  ptr =  new char[33];
+        1:  115:}
+        -:  116:
+        -:  117:
+        1:  118:void foo5( int n ) {
+        -:  119:  int i;
+        -:  120:  int *x;
+        1:  121:  x = new int[n];
+        1:  122:  x[0] = 1;
+        1:  123:  cout << "  " << 0 << "  " << x[0] << "\n";
+        1:  124:  x[1] = 1;
+        1:  125:  cout << "  " << 1 << "  " << x[1] << "\n";
+        9:  126:  for ( i = 2; i <= n; i++ )
+        -:  127:  {
+        8:  128:    x[i] = x[i-1] + x[i-2];
+        8:  129:    cout << "  " << i << "  " << x[i] << "\n";
+        -:  130:  }
+        1:  131:  delete [] x;
+        -:  132:
+        1:  133:  return;
+        -:  134:}
+        -:  135:
+        1:  136:void foo6( ) {
+        -:  137:  int *x, i;
+        1:  138:  x = new int[33];
+        6:  139:  for ( i = 0; i < 5; i++ )
+        5:  140:  { x[i] = i; }
+      101:  141:  for ( int z3 = 0; z3 < 10; z3++ ) for ( int z4 = 0; z4 < 10; z4++ )
+      100:  142:  { x[z3 % 5] = x[(z4 + 7) % 4]; }
+        1:  143:  x[2] = x[7];
+        1:  144:  x[5] = x[6];
+    10001:  145:  for (size_t ii = 0; ii < 100*100; ++ ii) {
+ 50010000:  146:    for (size_t jj = 0; jj < 100*50; ++ jj) {
+ 50000000:  147:      x[ii % 5] = x[jj % 5];
+        -:  148:    }
+        -:  149:  }
+       11:  150:  for ( i = 0; i < 10; i++ )
+        -:  151:  {
+       10:  152:    x[i] = 2 * x[i];
+        -:  153:  }
+       11:  154:  for ( i = 0; i < 10; i++ )
+        -:  155:  {
+       10:  156:    cout << "  " << i << "  " << x[i] << "\n";
+        -:  157:  }
+        1:  158:  delete [] x;
+        -:  159:
+        1:  160:  return;
+        -:  161:}
+        -:  162:
+        3:  163:X * fe1(const unsigned int max_x)
+        -:  164:{
+        3:  165:  if(max_x < 1)
+    #####:  166:    return NULL;
+        3:  167:  X * w_l = new X;
+        3:  168:  w_l->num_x = 0;
+        3:  169:  w_l->max_x = max_x;
+        3:  170:  w_l->l = new char*[max_x];
+       24:  171:  for(int i = 0; i< max_x; i++)
+       21:  172:    w_l->l[i] = new char[MX]; // LINE-A
+        3:  173:  return w_l;
+        -:  174:}
+        -:  175:
+        -:  176:
+        2:  177:X * fe1(const char x[])
+        -:  178:{
+        2:  179:  char *dup = strdup(x);
+        2:  180:  int len = strlen(dup) ;
+        2:  181:  if(len == 0)
+    #####:  182:    return NULL;
+        2:  183:  int num_spaces=0;
+      132:  184:  for(int i = 0; i<len; i++)  
+        -:  185:  {
+      130:  186:    if(dup[i] == ' ') 
+       14:  187:      num_spaces++;
+        -:  188:  }
+        2:  189:  int ii = 456*len;
+    59284:  190:  while (ii > 0) {
+    59280:  191:    int jj = ii;
+1299748200:  192:    while (jj > 0) {
+1299629640:  193:      -- jj;
+        -:  194:    }
+    59280:  195:    -- ii;
+        -:  196:  }
+        2:  197:  int word_num_x = num_spaces + 1;
+        2:  198:  X *w_l = fe1(word_num_x);
+        2:  199:  char * word = strtok (dup," ");
+       20:  200:  while (word != NULL)
+        -:  201:  {
+       16:  202:    strcpy(w_l->l[w_l->num_x++], word);
+       16:  203:    word = strtok (NULL," "); 
+        -:  204:  }
+        -:  205:
+        2:  206:  return w_l;
+        -:  207:}
+        -:  208:
+        -:  209:
+        1:  210:int fe2(X *w_l)
+        -:  211:{
+        1:  212:  if(w_l == NULL)
+    #####:  213:    return -1;
+        6:  214:  for(int i=0; i<w_l->max_x; i++)
+        5:  215:    delete w_l->l[i]; // LINE-B
+        1:  216:  delete w_l->l;
+        1:  217:  return 0;
+        -:  218:
+        -:  219:}
+        -:  220:
+        3:  221:int fe3(X *w_l)
+        -:  222:{
+        3:  223:  if(w_l == NULL)
+    #####:  224:    return -1;
+       29:  225:  for(int i = 0; i<w_l->num_x-1; i++)
+        -:  226:  {
+       26:  227:    cout<<w_l->l[i]<<" ";
+        -:  228:  }
+        3:  229:  cout<<w_l->l[w_l->num_x-1]<<endl;
+        3:  230:  return 0;
+        -:  231:}
+        -:  232:
+    #####:  233:int fi1(X *w_l, const char x[])
+        -:  234:{
+    #####:  235:  char *dup = strdup(x);
+    #####:  236:  int len = strlen(dup) ;
+    #####:  237:  if(w_l == NULL || len == 0)
+    #####:  238:    return -1;
+    #####:  239:  int num_spaces=0;
+    #####:  240:  for(int i = 0; i<len; i++)  
+        -:  241:  {
+    #####:  242:    if(x[i] == 32)
+    #####:  243:      num_spaces++;
+        -:  244:  }
+    #####:  245:  int word_num_x = num_spaces + 1,
+    #####:  246:    capacity = w_l->max_x - w_l->num_x;
+    #####:  247:  if( word_num_x > capacity)
+        -:  248:  {
+    #####:  249:    unsigned int new_max_x = w_l->num_x + word_num_x;
+    #####:  250:    char **tmp_l = new char*[new_max_x];
+    #####:  251:    for(int i = 0; i< new_max_x; i++)
+        -:  252:    {
+    #####:  253:      tmp_l[i] = new char[MX];
+        -:  254:    }
+    #####:  255:    for(int i=0; i<w_l->num_x; i++)
+        -:  256:    {
+    #####:  257:      strcpy(tmp_l[i], w_l->l[i]); // LINE-C
+        -:  258:    }
+    #####:  259:    for(int i=0; i<w_l->max_x; i++)
+    #####:  260:      delete w_l->l[i];
+    #####:  261:    delete w_l->l;
+    #####:  262:    w_l->l = tmp_l;
+        -:  263:  }
+    #####:  264:  char * word = strtok (dup," ");
+    #####:  265:  while (word != NULL)
+        -:  266:  {
+    #####:  267:    strcpy(w_l->l[w_l->num_x++], word);
+    #####:  268:    word = strtok (NULL," "); 
+        -:  269:  }
+    #####:  270:  return word_num_x;
+        -:  271:}
+        -:  272:
+    #####:  273:int fi1(X *dst_l, const X *src_l)
+        -:  274:{
+    #####:  275:  if(dst_l == NULL || src_l == NULL)
+    #####:  276:    return -1;
+    #####:  277:  int capacity = dst_l->max_x - dst_l->num_x;
+    #####:  278:  if(capacity < src_l->num_x)
+        -:  279:  {
+    #####:  280:    unsigned int new_max_x = dst_l->num_x + src_l->num_x;
+    #####:  281:    char **tmp_l = new char*[new_max_x];
+    #####:  282:    for(int i = 0; i< new_max_x; i++)
+        -:  283:    {
+    #####:  284:      tmp_l[i] = new char[MX];
+        -:  285:    }
+    #####:  286:    for(int i=0; i<dst_l->num_x; i++)
+        -:  287:    {
+    #####:  288:      strcpy(tmp_l[i], dst_l->l[i]);
+        -:  289:    }
+    #####:  290:    for(int i=0; i<dst_l->max_x; i++)
+    #####:  291:      delete dst_l->l[i];
+    #####:  292:    delete dst_l->l;
+    #####:  293:    dst_l->l = tmp_l;
+        -:  294:  }
+    #####:  295:  for(int i=0; i<src_l->num_x; i++)
+        -:  296:  {
+    #####:  297:    strcpy(dst_l->l[dst_l->num_x++],src_l->l[i]);
+        -:  298:  }
+        -:  299:
+    #####:  300:  return 0;
+        -:  301:}
+        -:  302:
+    #####:  303:char* fi2(const X *w_l, const char word[])
+        -:  304:{
+    #####:  305:  if(w_l == NULL)
+    #####:  306:    return NULL;
+        -:  307:
+    #####:  308:  for(int i =0; i< w_l->num_x; i++)
+        -:  309:  {
+    #####:  310:    if(strcmp(word, w_l->l[i])==0)
+        -:  311:    {
+    #####:  312:      return w_l->l[i];
+        -:  313:    }
+        -:  314:  }
+    #####:  315:  return NULL;
+        -:  316:}
+        -:  317:
+        -:  318:
+    #####:  319:int fi3(const X *w_l, const char word[], char *&s_ptr, char *&e_ptr)
+        -:  320:{
+        -:  321:  
+    #####:  322:  if(w_l == NULL)
+    #####:  323:    return -1;
+        -:  324:
+    #####:  325:  int seq_num_x = 0;
+    #####:  326:  for(int i=0; i<w_l->num_x; i++)
+        -:  327:  {
+    #####:  328:    if((s_ptr == NULL) && (strcmp(word, w_l->l[i]) == 0))
+        -:  329:    {
+    #####:  330:      seq_num_x++;
+    #####:  331:      s_ptr=w_l->l[i];
+        -:  332:    }
+    #####:  333:    else if((s_ptr != NULL) && (strcmp(word, w_l->l[i]) == 0))
+        -:  334:    {
+    #####:  335:      seq_num_x++;
+    #####:  336:      e_ptr=w_l->l[i];
+        -:  337:    } 
+    #####:  338:    else if((s_ptr != NULL) && (strcmp(word, w_l->l[i]) != 0))
+        -:  339:    {
+    #####:  340:      break;
+        -:  341:    }
+        -:  342:  }
+        -:  343:
+    #####:  344:  return seq_num_x;
+        -:  345:}
+        -:  346:
+    #####:  347:int fo1(X *w_l, const char word[])
+        -:  348:{
+    #####:  349:  if(w_l == NULL)
+    #####:  350:    return -1;
+    #####:  351:  int num_removed = 0;
+    #####:  352:  for(int i=0; i<w_l->num_x; i++)
+        -:  353:  {
+    #####:  354:    if(strcmp(word, w_l->l[i]) == 0 )
+        -:  355:    {
+    #####:  356:      num_removed++;
+    #####:  357:      for(int j=i; j<w_l->num_x-1; j++)
+        -:  358:      {
+    #####:  359:        fum2(w_l->l[j], w_l->l[j+1]);
+        -:  360:      }
+    #####:  361:      i--;
+    #####:  362:      w_l->num_x--;
+        -:  363:    }
+        -:  364:  }
+    #####:  365:  return num_removed;
+        -:  366:}
+        -:  367:
+    #####:  368:int fo2(X *w_l)
+        -:  369:{
+    #####:  370:  if(w_l == NULL)
+    #####:  371:    return -1;
+    #####:  372:  int num_removed = 0;
+        -:  373:
+    #####:  374:  for(int i=0; i<w_l->num_x-1; i++)
+        -:  375:  {
+    #####:  376:    for(int j=i+1; j<w_l->num_x; j++)
+        -:  377:    {
+    #####:  378:      if(strcmp(w_l->l[i], w_l->l[j]) == 0)
+        -:  379:      {
+    #####:  380:        num_removed++;
+    #####:  381:        for(int k=j; k<w_l->num_x-1; k++)
+        -:  382:        {
+    #####:  383:          fum2(w_l->l[k], w_l->l[k+1]);
+        -:  384:        }
+    #####:  385:        j--;
+    #####:  386:        w_l->num_x--;
+        -:  387:      }
+        -:  388:    }
+        -:  389:  }
+    #####:  390:  return num_removed;
+        -:  391:}
+        -:  392:
+        -:  393:
+    #####:  394:int fo3(X *w_l)
+        -:  395:{
+    #####:  396:  if(w_l == NULL)
+    #####:  397:    return -1;
+    #####:  398:  if(w_l->num_x <= 1)
+    #####:  399:    return 1;
+        -:  400:  int min_pos;
+    #####:  401:  for(int i=0; i<w_l->num_x-1; i++)
+        -:  402:  {
+    #####:  403:    min_pos = i;
+    #####:  404:    for(int j=i+1; j<w_l->num_x; j++)
+        -:  405:    {
+    #####:  406:      if(strcmp(w_l->l[min_pos], w_l->l[j]) > 0)
+        -:  407:      {
+    #####:  408:        min_pos = j;
+        -:  409:      }
+        -:  410:    }
+    #####:  411:    if(i!=min_pos)
+    #####:  412:      fum2(w_l->l[i],w_l->l[min_pos]);
+        -:  413:  }
+    #####:  414:  return 0;
+        -:  415:}
+        -:  416:
+        1:  417:int fum1(X *w_l)
+        -:  418:{
+        1:  419:  if(w_l == NULL)
+    #####:  420:      return -1;
+        -:  421:
+        1:  422:  int num_notchanged = 0; 
+       14:  423:  for(int i=0; i<w_l->num_x; i++)
+        -:  424:  {
+        -:  425:     
+       13:  426:    if(fum3(w_l->l[i][0]))
+        -:  427:    { 
+        2:  428:      strcat(w_l->l[i],"nay");
+        -:  429:    }
+        -:  430:    else
+        -:  431:    {
+       11:  432:      char front[MX], back[MX], ay[] = "ney";
+       11:  433:      memset(front,0,MX);
+       11:  434:      memset(back,0,MX);
+        -:  435:
+       11:  436:      int j=0, word_len = strlen(w_l->l[i]);
+       38:  437:      while(!fum3(w_l->l[i][j])&&j<word_len)
+        -:  438:      {
+       16:  439:        front[j] = w_l->l[i][j];
+       16:  440:        j++;
+        -:  441:      }
+       11:  442:      int front_len = strlen(front);
+        -:  443:      
+       92:  444:      while(j<word_len) // LINE-D
+        -:  445:      {
+       70:  446:        back[j-front_len] = w_l->l[i][j];
+       70:  447:        j++;
+        -:  448:
+        -:  449:      }
+       11:  450:      if(front_len < word_len)
+       11:  451:        strcat(front,ay);
+        -:  452:      else
+    #####:  453:        num_notchanged++;
+        -:  454:
+       11:  455:      strcat(back,front);
+       11:  456:      strcpy(w_l->l[i],back);
+        -:  457:    }
+        -:  458:  }
+        1:  459:  return num_notchanged;
+        -:  460:}
+        -:  461:
+    #####:  462:void fum2(char *& p1, char *& p2)
+        -:  463:{
+    #####:  464:  char *tmp = p1;
+    #####:  465:  p1 = p2;
+    #####:  466:  p2 = tmp;
+    #####:  467:}
+        -:  468:
+       40:  469:bool fum3(char c)
+        -:  470:{
+       40:  471:  switch(c)
+        -:  472:  {
+        -:  473:  case 'a':
+        -:  474:  case 'A':
+        -:  475:  case 'e':
+        -:  476:  case 'E':
+        -:  477:  case 'i':
+        -:  478:  case 'I':
+        -:  479:  case 'o':
+        -:  480:  case 'O':
+        -:  481:  case 'u':
+        -:  482:  case 'U':
+       13:  483:    return true;
+        -:  484:    break;
+        -:  485:  default:
+       27:  486:    return false;
+        -:  487:  }
+        3:  488:}

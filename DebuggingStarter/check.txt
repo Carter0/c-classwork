@@ -2,9 +2,9 @@ Q1: Compile and run the program using gdb.  Determine the following
 values:
 
 In the call to foo3, the value of x[33] when the function returns: 0
-In the call to foo5, the value of x[i-1] the first time i == 7: []
-In the call to foo22, the value of *s2 the third time *s3 == ' ': []
-In the call to foo6, the value of x[0] the first time z3 == 3 and z4 == 4: []
+In the call to foo5, the value of x[i-1] the first time i == 7: [13]
+In the call to foo22, the value of *s2 the third time *s3 == ' ': ["araquaza mew snorlax:]
+In the call to foo6, the value of x[0] the first time z3 == 3 and z4 == 4: [3]
 
 
 
@@ -12,21 +12,27 @@ Q2: Compile and run the program using Valgrind. Find three *different
 types* of memory errors, describing the line numbers, variables involved,
 and where memory was allocated, if relevant.
 
-On line 40, mismatched delete of pc, which was allocated on line 39.
-[]
-[]
-[]
 
+1. Use of unitialized value size of 8 in check.cpp 156. 
+    Basically the problem was you were trying to acces i[8] when there was no memory located at 
+    i[8]. 0x4EC0583 is the address of memory that was causing problems. 
+2. Mistmatched free()/delete/delete[] at line 216. 
+    Problem here is that you are deleting twice. You are looping through and deleting each element
+    and then deleting everything again right after. 
+3. Invalid write of size 4 at line 108.
+    It looks like the problem is you are trying to set a pointer of byte size 4 equal to an array 
+    of integers. They both have different byte sizes so it is producing and error. 
 
 
 Q3: Compile and run the program using gprof (without optimizations -O0).
 List the top 4 functions that the program spends its time in.
 
-fe1(char const*)
-[]
-[]
-[]
 
+ % time  seconds   seconds    calls   s/call   s/call  name    
+ 86.35      2.57     2.57        2     1.29     1.29  fe1(char const*)
+  5.71      2.74     0.17        1     0.17     0.17  foo6()
+  5.38      2.90     0.16        1     0.16     0.16  foo2()
+  2.69      2.98     0.08        1     0.08     0.08  foo22(char*)
 
 
 Q4: Compile and run the program using gcov.  For the lines marked with
@@ -34,6 +40,6 @@ comments LINE-A, LINE-B, LINE-C and LINE-D, determine how many times
 each line was executed.
 
 LINE-A: 21
-LINE-B: []
-LINE-C: []
-LINE-D: []
+LINE-B: 5 
+LINE-C: ##### or was not executed 
+LINE-D: 92 

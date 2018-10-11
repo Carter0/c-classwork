@@ -1,0 +1,11 @@
+Errors found with Valgrind
+
+    1. Conditional jump or move depends on uninitialised value(s) at line 18.        
+        There were multiple issues with this line of code. The main one is that it is deleting an array that was never initialized. In order to fix the problem I created a new char array and set it equal to buffer in the constructor. 
+
+    2. This also fixed the mismatched free delete error valgrind was outputting. 
+    
+    3. There was also a similar error to #1. And simply filling in the constuctor fixed that issue too. 
+    I tried inputting negative numbers, and strings, and decimals, but I found no other memory error no matter how many times I inputted data.
+
+
