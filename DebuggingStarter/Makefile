@@ -1,5 +1,5 @@
-CPPFLAGS=-ggdb -pg
-LDFLAGS=-pg
+CPPFLAGS=-ggdb -O0 -fno-inline
+LDFLAGS=
 
 #CPPFLAGS=-ggdb -O0 -fno-inline
 #LDFLAGS=

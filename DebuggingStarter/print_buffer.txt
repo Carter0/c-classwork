@@ -6,6 +6,16 @@ Errors found with Valgrind
     2. This also fixed the mismatched free delete error valgrind was outputting. 
     
     3. There was also a similar error to #1. And simply filling in the constuctor fixed that issue too. 
-    I tried inputting negative numbers, and strings, and decimals, but I found no other memory error no matter how many times I inputted data.
+
+    4. There was another error run when I tried to run the code. It never seemed to stop running and when I clicked control-c to break out of it I got another valgrind error. 
+        ==65347== Process terminating with default action of signal 2 (SIGINT)
+   The error was occuring on line 71.
 
 
+    I managed to fix the issue when I commented out the cin.ignore line below cin.clear. I know I was not supposed to touch main, but the code wasnt working as it should I believe. 
+
+
+    5. Another error I got after rerunning the code was "Invalid read of size 1" on line 25. This seems to be because of the resize_buffer method. I am making a new array on the heap when I am not sure I need to because my constructor already did that. I rewrote the resize_buffer method but I am not sure that fixed the problem.
+
+
+    6. Another possible theory for the same valgrind error is that I am creating a buffer of size 6 but using a word longer than the size of the char array. Ill fix this by only taking in the first few elements of whatever string I put in. I rewrote ream_from to account for this problem but I still get the same valgrind error.  
