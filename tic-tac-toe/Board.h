@@ -19,7 +19,7 @@ class Board {
 
 
         // resets the board to be of the given size; resets to X player's turn
-        void reset_board_size(unsigned int size);
+        void reset_board_size(int size);
 
         // makes a move for the current player in the given row and column if possible, and returns true
         // if the move is not possible (the space is already filled or off the board) no move is made and returns false
@@ -28,7 +28,7 @@ class Board {
         // r0 c0 | r0 c1
         // -------------
         // r1 c0 | r1 c1
-        bool make_move(unsigned int row, unsigned int column);
+        bool make_move(int row, int column);
 
         // gets the current status of the game based on the board
         // a game is won by a player if they have filled all the spaces in a row, column, or diagonal

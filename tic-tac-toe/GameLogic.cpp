@@ -5,10 +5,8 @@ using namespace std;
 
 GameLogic::GameLogic()
 {
-    // TODO ?
 }
 GameLogic::~GameLogic() {
-    // TODO ?
 }
 
 void GameLogic::run()
@@ -40,35 +38,36 @@ void GameLogic::display_board_and_input_next_move()
     cout << endl;
 
 
-
-    //reset board player option
-    string reset;
-    cout << "Reset Board? (y/n)" << endl;
-    cin >> reset; 
-    if(reset == "y") {
-        input_board_size();
-    }
-
-
-
     unsigned int x = 0;
     unsigned int y = 0;
     if(_board.get_status() == GameStatus::PLAYING_X_TURN) {
-        cout << "Enter move for X: ";
-        cout <<"Enter x position on board" << endl;
+        cout << "Enter move for player X: ";
         cin >> x;
-        cout << "Enter y position on board" << endl;
+        if(!cin) {
+            cout << "Goodbye" << endl;
+            exit(0);
+        }
         cin >> y;
+        if(!cin) {
+            cout << "Goodbye" << endl;
+            exit(0);
+        }
         bool move = _board.make_move(x, y);
         if(move == false) {
             cout << "Invalid Move" << endl;       
         } 
     } else if(_board.get_status() == GameStatus::PLAYING_O_TURN) {
-        cout << "Enter move for O: ";
-        cout <<"Enter x position on board" << endl;
+        cout << "Enter move for player O: ";
         cin >> x;
-        cout << "Enter y position on board" << endl;
+        if(!cin) {
+            cout << "Goodbye" << endl;
+            exit(0);
+        }
         cin >> y;
+        if(!cin) {
+            cout << "Goodbye" << endl;
+            exit(0);
+        }
         bool move = _board.make_move(x, y);
         if(move == false) {
             cout << "Invalid Move" << endl;

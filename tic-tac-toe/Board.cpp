@@ -16,7 +16,7 @@ Board::~Board()
 
 
 
-void Board::reset_board_size(unsigned int _size)
+void Board::reset_board_size(int _size)
 {
     size = _size; 
     for (int i = 0; i < size; i++) {
@@ -32,7 +32,7 @@ void Board::reset_board_size(unsigned int _size)
     gameStatus = GameStatus::PLAYING_X_TURN;
 }
 
-bool Board::make_move(unsigned int row, unsigned int column)
+bool Board::make_move(int row, int column)
 {
     for(int i = 0; i < size; i++) {
         for(int j = 0; j < size; j++) {
@@ -47,16 +47,15 @@ bool Board::make_move(unsigned int row, unsigned int column)
                     if(gameStatus == GameStatus::PLAYING_X_TURN){
                         gameStatus = GameStatus::PLAYING_O_TURN;
                     } else if(gameStatus == GameStatus::PLAYING_O_TURN) {
-                        cout << "making a move" << endl;
                         gameStatus = GameStatus::PLAYING_X_TURN;
                     }
                     //determining game over 
-                    if(checkNeighbors(true, 0, 0, 0, 0) == true) {
-                        gameStatus = GameStatus::OVER_X_WON;
-                    }
-                    if(checkNeighbors(false, 0, 0, 0, 0) == true) {
-                        gameStatus = GameStatus::OVER_O_WON;
-                    }
+                    //if(checkNeighbors(true, 0, 0, 0, 0) == true) {
+                        //gameStatus = GameStatus::OVER_X_WON;
+                    //}
+                    //if(checkNeighbors(false, 0, 0, 0, 0) == true) {
+                        //gameStatus = GameStatus::OVER_O_WON;
+                    //}
 
 
                     return true;
@@ -75,24 +74,24 @@ GameStatus Board::get_status() const
 {
     //determining whose turn it is
     bool xTurn = false;
-    bool oTurn = false;
+    //bool oTurn = false;
     if(gameStatus == GameStatus::PLAYING_X_TURN) {
         xTurn = true;
     } else if(gameStatus == GameStatus::PLAYING_O_TURN) {
-        oTurn = true;
+        //oTurn = true;
     } else if (gameStatus == GameStatus::OVER_X_WON) {
         return GameStatus::OVER_X_WON;
     } else if (gameStatus == GameStatus::OVER_O_WON) {
         return GameStatus::OVER_O_WON;
     }
-    
-    /*//determining game over */
-    //if(checkNeighbors(true, 0, 0, 0, 0) == true) {
-        //return GameStatus::OVER_X_WON;
-    //}
+
+    //determining game over 
+        //if(checkNeighbors(true, 0, 0, 0, 0) == true) {
+            //return GameStatus::OVER_X_WON;
+        //}
     //if(checkNeighbors(false, 0, 0, 0, 0) == true) {
         //return GameStatus::OVER_O_WON;
-    /*}*/
+    //}
 
     //do tie condition after some error checking
     if(isBoardFull() == true) {
@@ -108,37 +107,37 @@ GameStatus Board::get_status() const
 }
 
 //if playerturn == true is x, false is 0
-bool Board::checkNeighbors(bool playerTurn, int outOfBounds, int winCounter, int i, int j) const {
-    //check the current tile for information
-    if(playerTurn == true) {
-        if(board.at(i).at(j) == Space::X) {
-            winCounter++;
-        }
-    }  
-    if(playerTurn == false) {
-        if(board.at(i).at(j) == Space::O) {
-            winCounter++;
-        }
-    }
-    outOfBounds++;
-    //determines whether whole board has been checked
-    if(outOfBounds == size - 1) {
-        cout << "this isnt right" << endl;
-        cout << size - 1 << "here is size - 1" << endl;
-        if(winCounter == size - 1) {
-            //if someone won return true
-            return true; 
-        } else {
-            //if no one won return false
-            return false;
-        }
-    } else {
-        //do the recursion to check the other tiles if the other tiles have not been checked
-        return checkNeighbors(playerTurn, outOfBounds, winCounter, i + 1, j);
-        return checkNeighbors(playerTurn, outOfBounds, winCounter, i, j + 1);
-        return checkNeighbors(playerTurn, outOfBounds, winCounter, i + 1, j + 1);
-    }
-}
+//bool Board::checkNeighbors(bool playerTurn, int outOfBounds, int winCounter, int i, int j) const {
+    ////check the current tile for information
+    //if(playerTurn == true) {
+        //if(board.at(i).at(j) == Space::X) {
+            //winCounter++;
+        //}
+    //}  
+    //if(playerTurn == false) {
+        //if(board.at(i).at(j) == Space::O) {
+            //winCounter++;
+        //}
+    //}
+    //outOfBounds++;
+    ////determines whether whole board has been checked
+    //if(outOfBounds == size - 1) {
+        //cout << "this isnt right" << endl;
+        //cout << size - 1 << "here is size - 1" << endl;
+        //if(winCounter == size - 1) {
+            ////if someone won return true
+            //return true; 
+        //} else {
+            ////if no one won return false
+            //return false;
+        //}
+    //} else {
+        ////do the recursion to check the other tiles if the other tiles have not been checked
+        //return checkNeighbors(playerTurn, outOfBounds, winCounter, i + 1, j);
+        //return checkNeighbors(playerTurn, outOfBounds, winCounter, i, j + 1);
+        //return checkNeighbors(playerTurn, outOfBounds, winCounter, i + 1, j + 1);
+    //}
+//}
 
 bool Board::isBoardFull() const {
     bool isFull = true;
@@ -155,9 +154,7 @@ bool Board::isBoardFull() const {
 
 
 
-
-void Board::print_board() const
-{
+void Board::print_board() const {
     bool rightSide = false;
     bool leftSide = false;
     string currentSquare;
