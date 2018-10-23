@@ -1,0 +1,4 @@
+So far, we have a placeholder player sprite of Patrick Star from Spongebob. We just googled it and found it online. 
+
+
+We have watched many online tutorials in order to understand what is going on with SDL and how to install it on our respective systems. 

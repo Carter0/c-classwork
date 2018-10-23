@@ -1,0 +1,11 @@
+Our previous checkpoints were...
+
+
+Checkpoint 1
+___ Find a way to create basic levels that the player can move around in.
+___ Find a way to implement player input for the game
+___ Create a basic layout for classes and header files needed to make the game. 
+
+
+
+and we have completed all of those. We have a solid class layout for everything in our project, and we have figured out how to use SDL to render objects to the screen. 

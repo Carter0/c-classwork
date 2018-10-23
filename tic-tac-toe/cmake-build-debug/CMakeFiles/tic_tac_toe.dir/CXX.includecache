@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/Carter/Desktop/c++/tic-tac-toe/Board.cpp
+Board.h
+/Users/Carter/Desktop/c++/tic-tac-toe/Board.h
+iostream
+-
+vector
+-
+string
+-
+
+/Users/Carter/Desktop/c++/tic-tac-toe/Board.h
+Util.h
+/Users/Carter/Desktop/c++/tic-tac-toe/Util.h
+vector
+-
+
+/Users/Carter/Desktop/c++/tic-tac-toe/GameLogic.cpp
+GameLogic.h
+/Users/Carter/Desktop/c++/tic-tac-toe/GameLogic.h
+Util.h
+/Users/Carter/Desktop/c++/tic-tac-toe/Util.h
+iostream
+-
+
+/Users/Carter/Desktop/c++/tic-tac-toe/GameLogic.h
+Board.h
+/Users/Carter/Desktop/c++/tic-tac-toe/Board.h
+
+/Users/Carter/Desktop/c++/tic-tac-toe/Util.h
+
+/Users/Carter/Desktop/c++/tic-tac-toe/tictactoe.cpp
+GameLogic.h
+/Users/Carter/Desktop/c++/tic-tac-toe/GameLogic.h
+
