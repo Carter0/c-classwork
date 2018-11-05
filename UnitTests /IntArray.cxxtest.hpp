@@ -13,8 +13,9 @@ class IntArrayTestSuite : public CxxTest::TestSuite
         void test_REMOVEME() {}
 
         void test_DoubleEquals() {
-            IntArray test1 = new IntArray(5);
-            IntArray test2 = new IntArray(5);
+            IntArray test1();
+            IntArray test2();
+            TS_ASSERT(test1 == test2);
         }
 };
 
