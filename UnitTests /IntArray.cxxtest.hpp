@@ -7,11 +7,15 @@
 
 class IntArrayTestSuite : public CxxTest::TestSuite
 {
-public:
+    public:
 
-  // TODO
-  void test_REMOVEME() {}
+        // TODO
+        void test_REMOVEME() {}
 
+        void test_DoubleEquals() {
+            IntArray test1 = new IntArray(5);
+            IntArray test2 = new IntArray(5);
+        }
 };
 
 #endif
