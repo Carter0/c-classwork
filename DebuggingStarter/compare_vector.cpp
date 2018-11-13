@@ -22,7 +22,7 @@ void outPutBr(vector<int> integers) {
 int main() {
     vector <int> integers;
     for (int i = 0; i < 1000000; i++) {
-        integers.push_back(i);
+integer:`.push_back(i);
     }
    
     outPutAt(integers);

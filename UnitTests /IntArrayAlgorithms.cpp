@@ -27,6 +27,7 @@ void IntArrayAlgorithms::swap(IntArray & lhs, IntArray & rhs) {
 }
 
 
+
 bool IntArrayAlgorithms::contains(const IntArray & arr, int val) {
     for(int i = 0; i < arr.size(); i++) {
         if(arr[i] == val) {
