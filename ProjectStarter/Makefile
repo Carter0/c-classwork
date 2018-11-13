@@ -1,13 +1,16 @@
 # project source and header files
-SOURCES=src/main.cpp
-HEADERS=
+SOURCES=src/main.cpp src/Game.cpp
+HEADERS=src/Game.h src/Platform.h src/Player.h
 
 # test header files
 TESTS=tests/exampletest.h
 
 # C++ compile and linker flags
 CPPFLAGS=-O0 `sdl2-config --cflags`
-LDFLAGS=`sdl2-config --libs` -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lGL
+LDFLAGS=`sdl2-config --libs` -lSDL2_image -lSDL2_mixer -lSDL2_ttf 
+
+#note, maybe bring back for linux
+#-lGL
 
 # location of cxxtest
 CXXTEST_HOME = cxxtest-4.4
