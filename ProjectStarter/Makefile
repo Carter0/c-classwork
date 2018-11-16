@@ -1,6 +1,6 @@
 # project source and header files
-SOURCES=src/main.cpp
-HEADERS=
+SOURCES=src/main.cpp src/Game.cpp
+HEADERS= src/Game.h src/Platform.h src/Player.h
 
 # test header files
 TESTS=tests/exampletest.h
