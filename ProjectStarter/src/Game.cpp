@@ -1,5 +1,8 @@
 #include "Game.h"
 
+
+
+
 Game::Game() {};
 Game::~Game() {};
 
@@ -57,7 +60,7 @@ void Game::update() {
 	}
 	
 	//key events handler
-	else if (event.type = SDL_KEYDOWN) {
+	else if (event.type == SDL_KEYDOWN) {
 
 		switch (event.key.keysym.sym) {
 		case SDLK_w:
