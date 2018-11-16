@@ -3,7 +3,7 @@ SOURCES=src/main.cpp src/Game.cpp
 HEADERS= src/Game.h src/Platform.h src/Player.h
 
 # test header files
-TESTS=tests/exampletest.h
+TESTS=tests/exampletest.h tests/gameTest.h
 
 # C++ compile and linker flags
 CPPFLAGS=-O0 `sdl2-config --cflags`
@@ -28,7 +28,7 @@ all: main test
 main: $(MAIN_OBJECTS)
 	g++ -std=c++11 $(LDFLAGS) $^ -o $@
 
-test: tests/test.o $(TEST_OBJECTS)
+test: tests/test.o $(TEST_OBJECTS) $(filter-out src/main.o,$(MAIN_OBJECTS))
 	g++ -std=c++11 $(LDFLAGS) $^ -o $@
 
 $(MAIN_OBJECTS): %.o: %.cpp $(HEADERS) Makefile

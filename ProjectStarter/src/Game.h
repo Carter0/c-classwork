@@ -21,7 +21,7 @@ public:
 	~Game();
 
 	//initialize the window and everything in it
-	void init(const char *title, int x, int y, int width, int height, bool fullScreen);
+	void init(const char *title, int x, int y, int _width, int _height, bool fullScreen);
 	//updates if any events occured
 	void update();
 	//renders images
@@ -31,6 +31,15 @@ public:
 	//checks if the game is still running
 	bool running();
 
+    //Some getters made for testing
+
+    //gets the window height currently in use
+    const int getHeight(); 
+        
+    //gets the window width currently in use
+    const int getWidth(); 
+
+
 private:
 	void drawRect();
 	SDL_Window * window;
@@ -38,4 +47,7 @@ private:
 	vector<Platform> p1;
 	Player p;
 	bool stillRunning;
+
+    int width;
+    int height;
 };
