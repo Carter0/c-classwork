@@ -1,0 +1,12 @@
+Checkpoint 2
+___ Start implementing features for the game. 
+___ Create a jumping and moving character. 
+___ Create a demo level to test out the features of the game.
+___ Create an enemy and way to kill the enemy in the game.
+
+
+We have completed around half the goals for checkpoint two. We have started to implement features for the game and we have a jumping and moving character. However the jumping is not working quite right. 
+
+Our demo level is not complete because the jumping and platforms are not yet correct.
+
+We might not have the time to make enemies.

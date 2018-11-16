@@ -13,7 +13,7 @@
 #include <cxxtest/ErrorPrinter.h>
 
 bool suite_ExampleSuite_init = false;
-#include "/home/carterweinberg/c++/c-classwork/ProjectStarter/tests/exampletest.h"
+#include "/Users/Carter/Desktop/c++/ProjectStarter/tests/exampletest.h"
 
 static ExampleSuite suite_ExampleSuite;
 

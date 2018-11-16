@@ -13,7 +13,7 @@
 #include <cxxtest/ErrorPrinter.h>
 
 bool suite_GameTestSuite_init = false;
-#include "/home/carterweinberg/c++/c-classwork/ProjectStarter/tests/gameTest.h"
+#include "/Users/Carter/Desktop/c++/ProjectStarter/tests/gameTest.h"
 
 static GameTestSuite suite_GameTestSuite;
 

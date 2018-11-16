@@ -1,5 +1,5 @@
 # project source and header files
-SOURCES=src/main.cpp src/Game.cpp
+SOURCES=src/main.cpp src/Game.cpp src/Player.cpp
 HEADERS= src/Game.h src/Platform.h src/Player.h
 
 # test header files

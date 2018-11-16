@@ -1,0 +1,5 @@
+Our player.png file has been changed to now use a creative commons png file from openclipart.org. They allow people to use pictures for non commercial use for free.
+
+The artist who made it is called 星球.
+
+We have watched tutorial videos. I have watched some in particular from the sdl2 website itself. They have a tutorial series I follow. 
