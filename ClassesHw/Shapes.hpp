@@ -4,6 +4,8 @@
 #include "Vector2D.hpp"
 #include <ostream>
 
+using namespace std;
+
 /*
  * Interface for a polymorphic shape.
  *
@@ -11,15 +13,17 @@
  * IShape must be a C++ interface-style class (no member variables; member functions have no implementations).
  *
  * Given IShape * o, Vector2D v, std::ostream os, the following should be defined:
- *  o->display(os): streams shape description (not followed by a newline) to given stream and returns stream
- *  o->translate(v): translates shape by v
  */
 class IShape {
 public:
-  // TODO
+    
+    // o->display(os): streams shape description (not followed by a newline) to given stream and returns stream
+    virtual void display(ostream os) = 0;
+    
+    // o->translate(v): translates shape by v
+    virtual void translate(Vector2D v) = 0;
 
 private:
-  // TODO
 };
 
 
@@ -33,9 +37,10 @@ private:
  *
  * Circle display format "Circle(cx cy; radius)"
  */
-class Circle /* TODO */ {
+class Circle: IShape {
 public:
-  // TODO
+    virtual void display(ostream os);
+    virtual void translate(Vector2D v);
 
 private:
   Vector2D m_center; // center point of circle
@@ -55,7 +60,7 @@ private:
  *
  * Triangle display format: "Triangle(ax ay; bx by; cx cy)"
  */
-class Triangle /* TODO */ {
+class Triangle : IShape {
 public:
   // TODO
 
