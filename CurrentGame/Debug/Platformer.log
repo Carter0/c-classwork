@@ -1,0 +1,7 @@
+﻿  Platforms.cpp
+c:\users\master\desktop\c++ demo\platformer\platformer\platforms.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\master\desktop\c++ demo\platformer\platformer\platforms.cpp(16): warning C4305: 'argument': truncation from 'double' to 'float'
+  main.cpp
+c:\users\master\desktop\c++ demo\platformer\platformer\platforms.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Generating Code...
+  Platformer.vcxproj -> C:\Users\Master\Desktop\c++ demo\Platformer\Debug\Platformer.exe

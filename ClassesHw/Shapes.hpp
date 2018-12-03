@@ -4,6 +4,8 @@
 #include "Vector2D.hpp"
 #include <ostream>
 
+
+
 using namespace std;
 
 /*
@@ -18,7 +20,7 @@ class IShape {
 public:
     
     // o->display(os): streams shape description (not followed by a newline) to given stream and returns stream
-    virtual void display(ostream os) = 0;
+    virtual ostream& display(ostream &os) = 0;
     
     // o->translate(v): translates shape by v
     virtual void translate(Vector2D v) = 0;
@@ -39,9 +41,9 @@ private:
  */
 class Circle: IShape {
 public:
-    virtual void display(ostream os);
     virtual void translate(Vector2D v);
-
+    virtual ostream& display(ostream &os);
+    
 private:
   Vector2D m_center; // center point of circle
   double m_radius; // radius of circle
@@ -62,7 +64,8 @@ private:
  */
 class Triangle : IShape {
 public:
-  // TODO
+    virtual void translate(Vector2D v);
+    virtual ostream& display(ostream &os);
 
 private:
   Vector2D * m_points; // pointer to dynamic length-three array containing points

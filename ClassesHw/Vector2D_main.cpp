@@ -6,7 +6,7 @@ using namespace std;
 
 int
 main() {
-  /*
+  
   {
     // initialized to zero
     Vector2D v1;
@@ -18,7 +18,7 @@ main() {
     Vector2D v1(1.1, 2.1);
     cout << setprecision(2) << v1 << endl;
   }
-
+    
   {
     // copy constructor
     Vector2D v0(2.2, 3.1);
@@ -50,28 +50,28 @@ main() {
     cout << setprecision(2) << v1.getX() << " " << v1.getY() << endl;
   }
 
-  {
-    // element access
-    Vector2D v1;
-    v1[0] = 8.8;
-    v1[1] = 9.1;
-    cout << setprecision(2) << v1 << endl;
-
-    try {
-      v1[2] = 0.0;
-    } catch (const out_of_range & e) {
-      cout << "caught exception" << endl;
-    }
-
-    const Vector2D & cv1 = v1;
-    cout << setprecision(2) << cv1[0] << " " << cv1[1] << endl;
-
-    try {
-      cout << cv1[2] << endl;
-    } catch (const out_of_range & e) {
-      cout << "caught exception" << endl;
-    }
-  }
+//  {
+//    // element access
+//    Vector2D v1;
+//    v1[0] = 8.8;
+//    v1[1] = 9.1;
+//    cout << setprecision(2) << v1 << endl;
+//
+//    try {
+//      v1[2] = 0.0;
+//    } catch (const out_of_range & e) {
+//      cout << "caught exception" << endl;
+//    }
+//
+//    const Vector2D & cv1 = v1;
+//    cout << setprecision(2) << cv1[0] << " " << cv1[1] << endl;
+//
+//    try {
+//      cout << cv1[2] << endl;
+//    } catch (const out_of_range & e) {
+//      cout << "caught exception" << endl;
+//    }
+//  }
 
   {
     // testing (in)equality
@@ -83,7 +83,7 @@ main() {
 
   {
     // element-wise negation
-    cout <<  -Vector2D(-1.1, -2.1) << endl;
+    //cout <<  -Vector2D(-1.1, -2.1) << endl;
   }
 
   {
@@ -91,9 +91,10 @@ main() {
     Vector2D v1(Vector2D(1.1, 2.1) + Vector2D(1.1, 1.0));
     cout << setprecision(2) << v1 << endl;
     
-    v1 += Vector2D(1.1, 1.0);
-    cout << setprecision(2) << v1 << endl;
+    //v1 += Vector2D(1.1, 1.0);
+    //cout << setprecision(2) << v1 << endl;
   }
+    /*
 
   {
     // subtraction
