@@ -2,15 +2,15 @@
 export LD_LIBRARY_PATH=<usr/lib && ./sfml-app
 
 # project source and header files
-SOURCES= src/main.cpp src/Player.cpp src/Map.cpp src/Platforms.cpp src/GameLogic.cpp 
-HEADERS= include/Platforms.h include/Player.h include/Map.h include/GameLogic.h 
+SOURCES= main.cpp Player.cpp Map.cpp Platforms.cpp GameLogic.cpp
+HEADERS= Platforms.h Player.h Map.h GameLogic.h
 
 # test header files
 #TESTS=tests/exampletest.h tests/gameTest.h
 
 # C++ compile and linker flags
 CPPFLAGS=-O0 -o main
-LDFLAGS=-lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+LDFLAGS= -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 
 #note, maybe bring back for linux
 #-lGL
@@ -29,7 +29,7 @@ TEST_SOURCES=$(TESTS:.h=.cpp)
 all: main test
 
 main: $(MAIN_OBJECTS)
-	g++ -std=c++11  $^ $(LDFLAGS) -o $@
+	g++ -std=c++11 $(LDFLAGS) $^ -o $@
 
 test: tests/test.o $(TEST_OBJECTS) $(filter-out src/main.o,$(MAIN_OBJECTS))
 	g++ -std=c++11 $(LDFLAGS) $^ -o $@

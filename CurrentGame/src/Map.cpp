@@ -1,7 +1,7 @@
-//#include "stdafx.h"
-#include "Map.h"
+#pragma once 
+#include <../include/Map.h>
 #include <iostream>
-
+#include <../include/Cell.h>
 
 
 
@@ -94,16 +94,18 @@
 		for (int i = 0; i < 30; i++) {
 			for (int j = 0; j < 40; j++)
 			{
+                //brown blocks in desert, can walk on
 				if (TileMap[i][j] == 'B') {
 					st2.setTextureRect(IntRect(60, 60, 32, 32));
 					st2.setPosition(j * 32, i * 32);
 					window.draw(st2);
 				}
+                //cactuses, if you touch you die.
 				if (TileMap[i][j] == 'V') {
 					cac.setPosition(j * 32, i * 32);
 					window.draw(cac);
 				}
-
+                //platforms drawn differently
 				if (TileMap[i][j] == '5') {
 
 					e5.setTextureRect(IntRect(0, 20, 32, 32));;
@@ -148,7 +150,8 @@
 
 	void Map::drawWinter(sf::RenderWindow &window) {
 
-		window.clear( Color(38, 69, 135, 1));
+		window.clear(Color(38, 69, 135, 1));
+		
 		
 
 		Texture t;
@@ -203,8 +206,8 @@
 		Sprite  sig;
 		sig.setTexture(sign);
 
-		String TileMap[20] =
-		{   "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+		 
+		String  TileMap[20]={   "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
 			"I                                                                                                                                                                                                         I",
 			"I                                                                                                                                                                                                         I",
 			"I                                                                                                                                                                                                         I",
@@ -212,15 +215,15 @@
 			"I                               SSSSSS                                                                 BBBBBBB                                                                             SSSS           I",
 			"I                                                                                                      BBBBBBB                                                                                            I",
 			"I                                                                                                SS    BBBBBBB               SSSS     SSSS     SSSS                                                       I", 
-			"I                                         SSSSSS                                   SSSSSSSSSS          BBBBBBB               BBBB     BBBB     BBBB                          SSSS                         I",
-			"I                      SSSSS                                                       BBBBBBBBBB          BBBBBBB               BBBB     BBBB     BBBB        SSSS                                           I",
+			"I                                         SSSSSS                                   SSSSSSSSSS          BBBBBBB               BBBB     BBBB     BBBB                                                       I",
+			"I                      SSSSS                                                       BBBBBBBBBB          BBBBBBB               BBBB     BBBB     BBBB                                                       I",
 			"I                      BBBBB                                         SSSSSSS       BBBBBBBBBB          BBBBBBB     SSSSS     BBBB     BBBB     BBBB                                                       I",
-			"I                      BBBBB                                         BBBBBBB       BBBBBBBBBB          BBBBBBB               BBBBT    BBBBT    BBBB               SSSS                                    I",
-			"I                      BBBBB                                         BBBBBBB       BBBBBBBBBB          BBBBBBB               BBBB     BBBB     BBBB                                SSSS                   I",
-			"I                 SSSS BBBBB                                         BBBBBBB    M  BBBBBBBBBB M        BBBBBBB               BBBB     BBBB     BBBB                                                       I",
-			"I              S  BBBB BBBBB                     SSSSSSSSSSSSSSSS    BBBBBBB       BBBBBBBBBB          BBBBBBB               BBBB     BBBB     BBBB                        SSSS                         M I",
-			"I Y        S      BBBB BBBBB                     BBBBBBBBBBBBBBBB    BBBBBBB  SSSSSBBBBBBBBBBSSSSS     BBBBBBB               BBBB     BBBB     BBBB                                               BBBBBBBBI",
-			"I     S           BBBB BBBBB        SSSSS        BBBBBBBBBBBBBBBB    BBBBBBB  BBBBBBBBBBBBBBBBBBBB     BBBBBBB               BBBB     BBBB     BBBB                                               BBBBBBBBI",
+			"I                      BBBBB                                         BBBBBBB       BBBBBBBBBB          BBBBBBB               BBBBT    BBBBT    BBBB                                                       I",
+			"I                      BBBBB                                         BBBBBBB       BBBBBBBBBB          BBBBBBB               BBBB     BBBB     BBBB                                                       I",//1
+			"I                 SSSS BBBBB                                         BBBBBBB    M  BBBBBBBBBB M        BBBBBBB               BBBB     BBBB     BBBB                                                       I",//2
+			"I              S  BBBB BBBBB                     SSSSSSSSSSSSSSSS    BBBBBBB       BBBBBBBBBB          BBBBBBB               BBBB     BBBB     BBBB                                                     M I",//300
+			"I Y        S      BBBB BBBBB                     BBBBBBBBBBBBBBBB    BBBBBBB  SSSSSBBBBBBBBBBSSSSS     BBBBBBB               BBBB     BBBB     BBBB                                               SSSSSSSSI",//400
+			"I     S           BBBB BBBBB        SSSSS        BBBBBBBBBBBBBBBB    BBBBBBB  BBBBBBBBBBBBBBBBBBBB     BBBBBBB               BBBB     BBBB     BBBB                                               BBBBBBBBI",// 500
 			"SSSSSSSSSSSSWWWWWWSSSSSSSSSSWWWWWWWWSSSSSWWWWWWWWSSSSSSSSSSSSSSSSWWWWSSSSSSSWWSSSSSSSSSSSSSSSSSSSSWWWWWSSSSSSSWWWWWWWWWWWWWWWSSSSSSSSSSSSSSSSSSSSSSSWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWSSSSSSSSI",
 			"ssssssssssssWWWWWWssssssssssWWWWWWWWsssssWWWWWWWWssssssssssssssssWWWWsssssssWWssssssssssssssssssssWWWWWsssssssWWWWWWWWWWWWWWWsssssssssssssssssssssssWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWssssssssI",
 		};
@@ -228,13 +231,16 @@
 		for (int i = 0; i < 19; i++) {
 			for (int j = 0; j < 203; j++)
 			{
-			
+                //surface, can collide with b
 				if (TileMap[i][j] == 'B') {
 					st3.setTextureRect(IntRect(60, 60, 32, 32));
 					st3.setPosition(j * 32, i * 32);
 					window.draw(st3);
+
+				
 				}
 
+                //can walk on s, can collide
 				if (TileMap[i][j] == 'S') {
 					st3.setTextureRect(IntRect(60, 20, 32, 32));
 					st3.setPosition(j * 32, i * 32);
@@ -246,12 +252,13 @@
 					st3.setPosition(j * 32, i * 32);
 					window.draw(st3);
 				}
+                //I is borders
 				if (TileMap[i][j] == 'I') {
 					st4.setTextureRect(IntRect(60, 60, 32, 32));
 					st4.setPosition(j * 32, i * 32);
 					window.draw(st4);
 				}
-
+                //he dies if he falls into the water, this is water
 				if (TileMap[i][j] == 'W') {
 					watr.setTextureRect(IntRect(60, 60, 32, 32));
 					watr.setPosition(j * 32, i * 32);
@@ -280,37 +287,80 @@
 		}
 	}
 
+	bool Map::collisionS(Player & p) {
+
+		String  TileMap[20] = { "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+			"I                                                                                                                                                                                                         I",
+			"I                                                                                                                                                                                                         I",
+			"I                                                                                                                                                                                                         I",
+			"I                                                                                                      SSSSSSS                                                                                            I",
+			"I                               SSSSSS                                                                 BBBBBBB                                                                             SSSS           I",
+			"I                                                                                                      BBBBBBB                                                                                            I",
+			"I                                                                                                SS    BBBBBBB               SSSS     SSSS     SSSS                                                       I",
+			"I                                         SSSSSS                                   SSSSSSSSSS          BBBBBBB               BBBB     BBBB     BBBB                                                       I",
+			"I                      SSSSS                                                       BBBBBBBBBB          BBBBBBB               BBBB     BBBB     BBBB                                                       I",
+			"I                      BBBBB                                         SSSSSSS       BBBBBBBBBB          BBBBBBB     SSSSS     BBBB     BBBB     BBBB                                                       I",
+			"I                      BBBBB                                         BBBBBBB       BBBBBBBBBB          BBBBBBB               BBBBT    BBBBT    BBBB                                                       I",
+			"I                      BBBBB                                         BBBBBBB       BBBBBBBBBB          BBBBBBB               BBBB     BBBB     BBBB                                                       I",//1
+			"I                 SSSS BBBBB                                         BBBBBBB    M  BBBBBBBBBB M        BBBBBBB               BBBB     BBBB     BBBB                                                       I",//2
+			"I              S  BBBB BBBBB                     SSSSSSSSSSSSSSSS    BBBBBBB       BBBBBBBBBB          BBBBBBB               BBBB     BBBB     BBBB                                                     M I",//300
+			"I Y        S      BBBB BBBBB                     BBBBBBBBBBBBBBBB    BBBBBBB  SSSSSBBBBBBBBBBSSSSS     BBBBBBB               BBBB     BBBB     BBBB                                               BBBBBBBBI",//400
+			"I     S           BBBB BBBBB        SSSSS        BBBBBBBBBBBBBBBB    BBBBBBB  BBBBBBBBBBBBBBBBBBBB     BBBBBBB               BBBB     BBBB     BBBB                                               BBBBBBBBI",// 500
+			"SSSSSSSSSSSSWWWWWWSSSSSSSSSSWWWWWWWWSSSSSWWWWWWWWSSSSSSSSSSSSSSSSWWWWSSSSSSSWWSSSSSSSSSSSSSSSSSSSSWWWWWSSSSSSSWWWWWWWWWWWWWWWSSSSSSSSSSSSSSSSSSSSSSSWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWSSSSSSSSI",
+			"ssssssssssssWWWWWWssssssssssWWWWWWWWsssssWWWWWWWWssssssssssssssssWWWWsssssssWWssssssssssssssssssssWWWWWsssssssWWWWWWWWWWWWWWWsssssssssssssssssssssssWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWssssssssI",
+		};
+
+		
+
+		for (int i = 0; i < 19; i++) {
+			for (int j = 0; j < 203; j++)
+			{
+				if (TileMap[i][j] == 'S') {
+
+					return	p.sprite.getPosition().x == j * 32 && p.sprite.getPosition().x == i * 32;
+
+				}
+			}
+		}
+	}
+
+
+
+	
 
 	void Map::drawGrave(sf::RenderWindow &window) {}
 
-	void Map::setViewDesert(sf::RenderWindow &window, GameLogic & g) {
+    //sets the view for the desert, view only shows portion, differerent for each level.
+	void Map::setViewDesert(sf::RenderWindow &window, Player & p) {
 	  
 		
 		sf::View viewDesert;
 
 						
-		viewDesert.setSize(700, 400);
+		//viewDesert.setSize(700, 400);
+		 viewDesert.setSize(1000, 700);
 
 		///SCROLLING LOGIC desert
-		if (g.p.sprite.getPosition().x <= 850 && g.p.sprite.getPosition().x >= 350) {
-			viewDesert.setCenter(g.p.sprite.getPosition().x, g.p.sprite.getPosition().y - 120);
+		if (p.sprite.getPosition().x <= 700 && p.sprite.getPosition().x >= 550) {
+			viewDesert.setCenter(p.sprite.getPosition().x, p.sprite.getPosition().y - 120);
 		}
-		else if (g.p.sprite.getPosition().x <= 350) { viewDesert.setCenter(350, g.p.sprite.getPosition().y - 120); }
-		else if (g.p.sprite.getPosition().x >= 850) { viewDesert.setCenter(850, g.p.sprite.getPosition().y - 120); }
+		else if (p.sprite.getPosition().x <= 550) { viewDesert.setCenter(550, p.sprite.getPosition().y - 120); }
+		else if (p.sprite.getPosition().x >= 700) { viewDesert.setCenter(700, p.sprite.getPosition().y - 120); }
 		window.setView(viewDesert);
 	
 	}
 
 
-		void Map::setViewWinter(sf::RenderWindow &window, GameLogic & g) {	
+		void Map::setViewWinter(sf::RenderWindow &window, Player & p) {	
 		sf::View viewWinter;
-		viewWinter.setSize(600, 600);
+		//viewWinter.setSize(600, 600);
+		viewWinter.setSize(1000, 600);
 
-		if (g.p.sprite.getPosition().x <= 6100 && g.p.sprite.getPosition().x >= 300) {
-			viewWinter.setCenter(g.p.sprite.getPosition().x, g.p.sprite.getPosition().y- 200);
+		if (p.sprite.getPosition().x <= 5700 && p.sprite.getPosition().x >= 550) {
+			viewWinter.setCenter(p.sprite.getPosition().x, p.sprite.getPosition().y- 180);
 		}
-		else if (g.p.sprite.getPosition().x <= 300) { viewWinter.setCenter(300 , g.p.sprite.getPosition().y - 200); }
-		else if (g.p.sprite.getPosition().x >= 6100) { viewWinter.setCenter(6100, g.p.sprite.getPosition().y - 200); }
+		else if (p.sprite.getPosition().x <= 550) { viewWinter.setCenter(550 , p.sprite.getPosition().y - 180); }
+		else if (p.sprite.getPosition().x >= 5700) { viewWinter.setCenter(5700, p.sprite.getPosition().y - 180); }
 		window.setView(viewWinter);
 	
 	}
