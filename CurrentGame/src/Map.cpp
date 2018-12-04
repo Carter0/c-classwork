@@ -1,7 +1,7 @@
 #pragma once 
-#include <../include/Map.h>
+#include "../include/Map.h"
 #include <iostream>
-#include <../include/Cell.h>
+#include "../include/Cell.h"
 
 
 
@@ -49,7 +49,7 @@
 
 		};
 		Texture tile6;
-		tile6.loadFromFile("6.png");
+		tile6.loadFromFile("assets/6.png");
 		tile6.setSmooth(true);
 		Sprite st2;
 		st2.setTexture(tile6);
@@ -57,7 +57,7 @@
 
 
 		Texture cactus3;
-		cactus3.loadFromFile("cac.png");
+		cactus3.loadFromFile("assets/cac.png");
 		cactus3.setSmooth(true);
 		Sprite  cac;
 		cac.setTexture(cactus3);
@@ -65,26 +65,26 @@
 
 
 		Texture tileE5;
-		tileE5.loadFromFile("15.png");
+		tileE5.loadFromFile("assets/15.png");
 		tileE5.setSmooth(true);
 		Sprite e5;
 		e5.setTexture(tileE5);
 
 
 		Texture tree;
-		tree.loadFromFile("Tree.png");
+		tree.loadFromFile("assets/Tree.png");
 		Sprite tree1;
 		tree1.setTexture(tree);
 
 
 		Texture bush;
-		bush.loadFromFile("Bush.png");
+		bush.loadFromFile("assets/Bush.png");
 		Sprite bush1;
 		bush1.setTexture(bush);
 
 
 		Texture bfin;
-		bfin.loadFromFile("bfin.png");
+		bfin.loadFromFile("assets/bfin.png");
 		Sprite bfin1;
 		bfin1.setTexture(bfin);
 
@@ -155,7 +155,7 @@
 		
 
 		Texture t;
-		t.loadFromFile("BGwinter.png");
+		t.loadFromFile("assets/BGwinter.png");
 		Sprite bg;
 		bg.setTexture(t);
 		bg.setTextureRect(IntRect(0, 250, 1200, 900));
@@ -164,44 +164,44 @@
 		
 
 		Texture tile6;
-		tile6.loadFromFile("6w.png");
+		tile6.loadFromFile("assets/6w.png");
 		tile6.setSmooth(true);
 		Sprite st2;
 		st2.setTexture(tile6);
 
 		Texture tileS;
-		tileS.loadFromFile("2w.png");
+		tileS.loadFromFile("assets/2w.png");
 		tileS.setSmooth(true);
 		Sprite st3;
 		st3.setTexture(tileS);
 
 
 		Texture tileI;
-		tileI.loadFromFile("IceBox.png");
+		tileI.loadFromFile("assets/IceBox.png");
 		tileI.setSmooth(true);
 		Sprite st4;
 		st4.setTexture(tileI);
 
 		Texture water;
-		water.loadFromFile("water.png");
+		water.loadFromFile("assets/water.png");
 		water.setSmooth(true);
 		Sprite watr;
 		watr.setTexture(water);
 
 		Texture snowman;
-		snowman.loadFromFile("Stone.png");
+		snowman.loadFromFile("assets/Stone.png");
 		snowman.setSmooth(true);
 		Sprite snow;
 		snow.setTexture(snowman);
 
 		Texture treeW;
-		treeW.loadFromFile("Treew.png");
+		treeW.loadFromFile("assets/Treew.png");
 		treeW.setSmooth(true);
 		Sprite  trW;
 		trW.setTexture(treeW);
 
 		Texture  sign;
-		sign.loadFromFile("Sign2.png");
+		sign.loadFromFile("assets/Sign2.png");
 		sign.setSmooth(true);
 		Sprite  sig;
 		sig.setTexture(sign);

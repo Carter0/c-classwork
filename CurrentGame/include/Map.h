@@ -2,11 +2,12 @@
 #ifndef Map_H
 #define Map_H
 
-#include "stdafx.h"
+
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "Player.h"
 #include "Cell.h"
+#include <vector>
 
 
 class Map {
@@ -22,12 +23,12 @@ class Map {
     
     //returns the map collision data
     //TODO: implement this method
-    vector<Sprite> getMapColliders();
+    std::vector<Sprite> getMapColliders();
   
 private:
     //contains all the sprites for every object in the map that the player is colliding with.
     //TODO: add all the sprites into this vector.
-    vector<Sprite> mapColliders;
+    std::vector<Sprite> mapColliders;
 };
 
 #endif

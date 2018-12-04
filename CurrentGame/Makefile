@@ -2,8 +2,8 @@
 export LD_LIBRARY_PATH=<usr/lib && ./sfml-app
 
 # project source and header files
-SOURCES= src/main.cpp src/Player.cpp src/Map.cpp src/Platforms.cpp src/GameLogic.cpp 
-HEADERS= include/Platforms.h include/Player.h include/Map.h include/GameLogic.h 
+SOURCES= src/main.cpp src/Player.cpp src/Map.cpp src/Platforms.cpp src/GameLogic.cpp src/Cell.cpp
+HEADERS= include/Platforms.h include/Player.h include/Map.h include/GameLogic.h include/Cell.h
 
 # test header files
 #TESTS=tests/exampletest.h tests/gameTest.h

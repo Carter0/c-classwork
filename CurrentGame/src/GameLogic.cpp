@@ -1,5 +1,5 @@
-#include <../include/GameLogic.h>
-#include <SFML/Graphics.hpp>
+#include "../include/GameLogic.h"
+#include "SFML/Graphics.hpp"
 #include <iostream>
 using namespace sf;
 
@@ -11,7 +11,7 @@ timePassed = time.getElapsedTime().asSeconds();
 time.restart();
 if (timePassed>100) timePassed = 100;
     
-    map.
+    
 
     
     

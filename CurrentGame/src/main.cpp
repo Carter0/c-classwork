@@ -1,10 +1,10 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <iostream>
-#include <../include/Player.h>
-#include <../include/GameLogic.h>
-#include <../include/Map.h>
-#include <../include/Platforms.h>
+#include "../include/Player.h"
+#include "../include/GameLogic.h"
+#include "../include/Map.h"
+#include "../include/Platforms.h"
 
 ///TODO 
 //1 more maps  - Yasmin

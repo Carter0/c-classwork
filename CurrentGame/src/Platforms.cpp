@@ -1,11 +1,11 @@
 #pragma once 
-#include <../include/Platforms.h>
+#include "../include/Platforms.h"
 
 using namespace sf;
 
 void Platforms::move(int startX, int endX) {
     static Texture tileS;
-    tileS.loadFromFile("2w.png");
+    tileS.loadFromFile("assets/2w.png");
 	rectangle.setTexture(tileS);
 	rectangle.setTextureRect(sf::IntRect(0,10,128, 32));
 

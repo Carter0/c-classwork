@@ -1,11 +1,11 @@
 #pragma once 
-#include <../include/Player.h>
+#include "../include/Player.h"
 #include <iostream>
-#include <../include/Cell.h>
+#include "../include/Cell.h"
 using namespace sf;
 
 	Player::Player() {
-		t.loadFromFile("Santa-black.png");
+		t.loadFromFile("assets/Santa-black.png");
 		sprite.setTexture(t);
 		sprite.setTextureRect(IntRect(4, 74, 34, 56));
 	    
