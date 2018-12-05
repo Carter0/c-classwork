@@ -10,11 +10,12 @@
 #include <vector>
 #include "Cell.h"
 using namespace sf;
+using namespace std;
 class GameLogic {
 public :
 
 	
-	void init();
+	void init(vector<Sprite> collisions);
 	void update();
 	void setPlPosnWinter();
 	void movePlsWinter();
@@ -29,6 +30,10 @@ public :
 	Platforms p3;
 	Platforms p4;
 	Platforms p5;
+
+
+private:
+	vector <Sprite> collisionData;
     
     
 

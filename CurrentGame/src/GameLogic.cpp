@@ -5,16 +5,17 @@ using namespace sf;
 
 
 
-void GameLogic::init() {
+void GameLogic::init(vector<Sprite> collisions) {
 
-timePassed = time.getElapsedTime().asSeconds();
-time.restart();
-if (timePassed>100) timePassed = 100;
-    
-    
+	timePassed = time.getElapsedTime().asSeconds();
+	time.restart();
+	if (timePassed>100) {
+		timePassed = 100;
+	}
+	 
 
-    
-    
+	//adding in the collision data to the gamelogic class
+	collisionData = collisions;   
 }
 
 
@@ -42,6 +43,17 @@ void GameLogic::movePlsWinter() {
 
 
 void GameLogic::update() {
+
+	FloatRect playerTemp = p.sprite.getGlobalBounds();
+	int size = collisionData.size();
+	for(int i = 0; i < size; i++) {
+		Sprite borderTemp = collisionData.at(i);
+		if(playerTemp.intersects(borderTemp.getGlobalBounds()) == true) {
+			cout << "OMG WE DID IT BOIS" << endl;
+		}
+	}
+	
+
 
 	if (Keyboard::isKeyPressed(Keyboard::Left)) {
 	

@@ -1,4 +1,3 @@
-#pragma once 
 #include "../include/Player.h"
 #include <iostream>
 #include "../include/Cell.h"

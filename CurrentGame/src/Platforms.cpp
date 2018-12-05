@@ -1,4 +1,3 @@
-#pragma once 
 #include "../include/Platforms.h"
 
 using namespace sf;

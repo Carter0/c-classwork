@@ -22,13 +22,15 @@ class Map {
 	void setViewGrave(sf::RenderWindow &window);
     
     //returns the map collision data
-    //TODO: implement this method
     std::vector<Sprite> getMapColliders();
   
 private:
     //contains all the sprites for every object in the map that the player is colliding with.
-    //TODO: add all the sprites into this vector.
     std::vector<Sprite> mapColliders;
+    //so, I think you don't want to continually draw sprites, so I am going to add a boolean to only do it once
+    bool drawSprites = true;
+
+
 };
 
 #endif

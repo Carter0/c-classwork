@@ -5,6 +5,9 @@
 #include "../include/GameLogic.h"
 #include "../include/Map.h"
 #include "../include/Platforms.h"
+#include <iostream>
+#include <vector>
+using namespace std;
 
 ///TODO 
 //1 more maps  - Yasmin
@@ -36,7 +39,7 @@ int main() {
 			}
 		}
 
-		g.init();
+		
 		//map.setViewDesert(window, g.p);
 		
 		
@@ -49,6 +52,21 @@ int main() {
 		g.movePlsWinter();
 		window.draw(g.p.sprite);
 		window.display();
+
+		vector<Sprite> collisionData = map.getMapColliders();
+		g.init(collisionData);
+
+		//cout << map.getMapColliders().size() << endl;
+
+		
+		// int size = map.getMapColliders().size();
+		// for(int i = 0; i < size; i++) {
+		// 	cout << map.getMapColliders().at(i).getPosition().x << endl;
+		// }
+
+
+
+
 
 	}
 

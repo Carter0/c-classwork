@@ -1,7 +1,11 @@
-#pragma once 
 #include "../include/Map.h"
 #include <iostream>
 #include "../include/Cell.h"
+using namespace std;
+
+	vector<Sprite> Map:: getMapColliders() {
+		return mapColliders;
+	}
 
 
 
@@ -150,6 +154,8 @@
 
 	void Map::drawWinter(sf::RenderWindow &window) {
 
+
+
 		window.clear(Color(38, 69, 135, 1));
 		
 		
@@ -236,8 +242,7 @@
 					st3.setTextureRect(IntRect(60, 60, 32, 32));
 					st3.setPosition(j * 32, i * 32);
 					window.draw(st3);
-
-				
+					mapColliders.push_back(st3);
 				}
 
                 //can walk on s, can collide
@@ -245,6 +250,8 @@
 					st3.setTextureRect(IntRect(60, 20, 32, 32));
 					st3.setPosition(j * 32, i * 32);
 					window.draw(st3);
+					mapColliders.push_back(st3);
+					
 				}
 
 				if (TileMap[i][j] == 's') {
@@ -277,7 +284,7 @@
 				}
 
 				if (TileMap[i][j] == 'Y') {
-			
+
 					sig.setPosition(j * 32, i * 32);
 					window.draw(sig);
 				}
