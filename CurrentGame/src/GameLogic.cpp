@@ -40,16 +40,39 @@ void GameLogic::movePlsWinter() {
 
 }
 
+//functions checks if two floats are within the bounds of another
+//+ or - eight
+bool withInBounds(float fone, float ftwo){
+	if(fone - ftwo < 8) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 
 
 void GameLogic::update() {
 
+
+	//TODO -> finish collision code
 	FloatRect playerTemp = p.sprite.getGlobalBounds();
+	float playerX = p.x;
+	float playerY = p.y;
 	int size = collisionData.size();
 	for(int i = 0; i < size; i++) {
-		Sprite borderTemp = collisionData.at(i);
-		if(playerTemp.intersects(borderTemp.getGlobalBounds()) == true) {
-			cout << "OMG WE DID IT BOIS" << endl;
+		FloatRect borderTemp = collisionData.at(i).getGlobalBounds();
+		Vector2f mapPosition = collisionData.at(i).getPosition(); 
+		if(playerTemp.intersects(borderTemp) == true) {
+			//cout << playerX + (playerTemp.width/2) << endl;
+			//cout << collisionData.at(i).getPosition().x - (borderTemp.width/2) << endl;
+			if(withInBounds(playerX + (playerTemp.width/2), collisionData.at(i).getPosition().x - (borderTemp.width/2))) {
+				cout << "approaching from the right" << endl;
+				
+
+
+				
+			}
 		}
 	}
 	
