@@ -13,6 +13,8 @@ public:
 	void moveLeft(float timePassed);
 	void moveRight(float timePassed);
 	void jump(float timePassed);
+	void lockMovement();
+	void unlockMovement();
 	float currentImage = 0;
 	bool isJumping = false;
 	bool isFalling = false;
@@ -28,7 +30,7 @@ public:
 
 private:
 	void move(float timePassed, int reflect, float direction, int mirror);
-
+	bool lock = false;
 	Texture t;
 	
 

@@ -23,12 +23,14 @@ class Map {
     
     //returns the map collision data
     std::vector<Sprite> getMapColliders();
+    //returns all the sprites where the player dies if they touch them
+    std::vector<Sprite> getDeathColliders();
   
 private:
     //contains all the sprites for every object in the map that the player is colliding with.
     std::vector<Sprite> mapColliders;
-    //so, I think you don't want to continually draw sprites, so I am going to add a boolean to only do it once
-    bool drawSprites = true;
+    //a vector for all the sprites where the player dies if they touch them
+    std::vector<Sprite> deathColliders;
 
 
 };

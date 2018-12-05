@@ -15,11 +15,12 @@ class GameLogic {
 public :
 
 	
-	void init(vector<Sprite> collisions);
+	void init(vector<Sprite> collisions, vector <Sprite> deathCollisions);
 	void update();
 	void setPlPosnWinter();
 	void movePlsWinter();
-	bool collison(int x, int y);
+	void collisionCode();
+	void deathCollision();
 	std::vector<Cell> mapList;
 	Player p;
 	Map map;
@@ -34,7 +35,7 @@ public :
 
 private:
 	vector <Sprite> collisionData;
-    
+    vector <Sprite> deathData;
     
 
 };

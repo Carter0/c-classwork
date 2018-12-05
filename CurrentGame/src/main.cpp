@@ -54,7 +54,8 @@ int main() {
 		window.display();
 
 		vector<Sprite> collisionData = map.getMapColliders();
-		g.init(collisionData);
+		vector<Sprite> deathData = map.getDeathColliders();
+		g.init(collisionData, deathData);
 
 		//cout << map.getMapColliders().size() << endl;
 

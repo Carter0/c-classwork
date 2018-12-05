@@ -7,6 +7,10 @@ using namespace std;
 		return mapColliders;
 	}
 
+	vector<Sprite> Map:: getDeathColliders() {
+		return deathColliders;
+	}
+
 
 
 
@@ -103,11 +107,13 @@ using namespace std;
 					st2.setTextureRect(IntRect(60, 60, 32, 32));
 					st2.setPosition(j * 32, i * 32);
 					window.draw(st2);
+					mapColliders.push_back(st2);
 				}
                 //cactuses, if you touch you die.
 				if (TileMap[i][j] == 'V') {
 					cac.setPosition(j * 32, i * 32);
 					window.draw(cac);
+					deathColliders.push_back(cac);
 				}
                 //platforms drawn differently
 				if (TileMap[i][j] == '5') {
@@ -115,6 +121,7 @@ using namespace std;
 					e5.setTextureRect(IntRect(0, 20, 32, 32));;
 					e5.setPosition(j * 32, i * 32);
 					window.draw(e5);
+					mapColliders.push_back(e5);
 				}
 				if (TileMap[i][j] == '0') {
 					e5.setTextureRect(IntRect(0, 20, 32, 32));;
@@ -264,12 +271,14 @@ using namespace std;
 					st4.setTextureRect(IntRect(60, 60, 32, 32));
 					st4.setPosition(j * 32, i * 32);
 					window.draw(st4);
+					mapColliders.push_back(st4);
 				}
                 //he dies if he falls into the water, this is water
 				if (TileMap[i][j] == 'W') {
 					watr.setTextureRect(IntRect(60, 60, 32, 32));
 					watr.setPosition(j * 32, i * 32);
 					window.draw(watr);
+					deathColliders.push_back(watr);
 				}
 				if (TileMap[i][j] == 'M') {
 				

@@ -5,7 +5,7 @@ using namespace sf;
 
 
 
-void GameLogic::init(vector<Sprite> collisions) {
+void GameLogic::init(vector<Sprite> collisions, vector<Sprite> deathCollisions) {
 
 	timePassed = time.getElapsedTime().asSeconds();
 	time.restart();
@@ -15,7 +15,9 @@ void GameLogic::init(vector<Sprite> collisions) {
 	 
 
 	//adding in the collision data to the gamelogic class
-	collisionData = collisions;   
+	collisionData = collisions;
+	//adding death collision data
+	deathData = deathCollisions;   
 }
 
 
@@ -51,10 +53,36 @@ bool withInBounds(float fone, float ftwo){
 }
 
 
+void GameLogic::deathCollision() {
+	FloatRect playerTemp = p.sprite.getGlobalBounds();
+	float playerX = p.x;
+	float playerY = p.y;
+	int size = deathData.size();
+	for(int i = 0; i < size; i++) { 
+		FloatRect deathTemp = deathData.at(i).getGlobalBounds();
+		Vector2f deathPosition = deathData.at(i).getPosition(); 
 
-void GameLogic::update() {
+		//should work for the cactus, but not for the water
+		if(playerTemp.intersects(deathTemp)) { 
+			p.lockMovement();
+		}
 
 
+
+		//hard to test water code, because this is so computationally expensive, that the game lags. 
+		// if(playerY < deathPosition.y  && playerX < deathPosition.x + (deathTemp.width/2) && playerX > deathPosition.x - (deathTemp.width/2)) {
+
+		// }
+
+		
+
+
+
+	}
+
+}
+
+void GameLogic::collisionCode() {
 	//TODO -> finish collision code
 	FloatRect playerTemp = p.sprite.getGlobalBounds();
 	float playerX = p.x;
@@ -63,23 +91,33 @@ void GameLogic::update() {
 	for(int i = 0; i < size; i++) {
 		FloatRect borderTemp = collisionData.at(i).getGlobalBounds();
 		Vector2f mapPosition = collisionData.at(i).getPosition(); 
-		if(playerTemp.intersects(borderTemp) == true) {
+		if(playerTemp.intersects(borderTemp)) {
+			//cout << "player position is " << playerY << endl;
+			//cout << "thing position is " << mapPosition.y << endl;
 			//cout << playerX + (playerTemp.width/2) << endl;
 			//cout << collisionData.at(i).getPosition().x - (borderTemp.width/2) << endl;
-			if(withInBounds(playerX + (playerTemp.width/2), collisionData.at(i).getPosition().x - (borderTemp.width/2))) {
-				cout << "approaching from the right" << endl;
-				
+			if(withInBounds(playerX + (playerTemp.width/2), mapPosition.x - (borderTemp.width/2))) {
+			// && playerY > mapPosition.y + (borderTemp.height/2) && playerY < mapPosition.y - (borderTemp.height/2)) {
+				//cout << "approaching from the right" << endl;
+				//p.lockMovement();
+				//2. move the player back to the left -> this is trickier than I thought because just calling the move function without 
+				//	is causing weird behaviour
 
-
-				
+				//3. unlock movement
+				//p.unlockMovement();	
 			}
 		}
 	}
-	
+}
 
+
+
+void GameLogic::update() {
+
+	collisionCode();
+	deathCollision();
 
 	if (Keyboard::isKeyPressed(Keyboard::Left)) {
-	
 		p.moveLeft(timePassed);
 	}
 	if (Keyboard::isKeyPressed(Keyboard::Right)) {
