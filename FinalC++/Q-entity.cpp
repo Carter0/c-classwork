@@ -20,7 +20,9 @@ public:
     // TODO: implement other member functions as needed
     void moveBy(int dx, int dy) { m_x += dx; m_y += dy; }
     void print() { cout << m_x << "," << m_y << endl; }
-    virtual void update();
+    virtual void update() {};
+    virtual ~Entity(){};
+    
 private:
     Entity(const Entity & o) = delete;
     Entity & operator=(const Entity & o) = delete;
