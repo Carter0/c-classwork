@@ -44,7 +44,7 @@ void GameLogic::movePlsWinter() {
 
 //functions checks if two floats are within the bounds of another
 //+ or - eight
-bool withInBounds(float fone, float ftwo){
+bool GameLogic::withInBounds(float fone, float ftwo){
 	if(fone - ftwo < 8) {
 		return true;
 	} else {
@@ -98,7 +98,7 @@ void GameLogic::collisionCode() {
 			//cout << collisionData.at(i).getPosition().x - (borderTemp.width/2) << endl;
 			if(withInBounds(playerX + (playerTemp.width/2), mapPosition.x - (borderTemp.width/2))) {
 			// && playerY > mapPosition.y + (borderTemp.height/2) && playerY < mapPosition.y - (borderTemp.height/2)) {
-				//cout << "approaching from the right" << endl;
+				cout << "approaching from the right" << endl;
 				//p.lockMovement();
 				//2. move the player back to the left -> this is trickier than I thought because just calling the move function without 
 				//	is causing weird behaviour

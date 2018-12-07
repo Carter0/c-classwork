@@ -1,0 +1,14 @@
+We got all of our assets from 
+
+https://opengameart.org/ and https://www.gameart2d.com/freebies.html.
+
+So all of our assets are open source.
+
+Specifically, we got our Santa sprite from Game Art 2d as well as all the animations for the sprite. 
+
+All the other assets are from opengameart.org. 
+
+
+We watched many tutorials on SFML. Specifically, I spent a lot of time going through SFML documentation online and watching tutorial videos on SFML too. 
+
+Also, I spent some time trying to configure makesfiles for SFML. I learned a lot about how makefiles work.

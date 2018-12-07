@@ -21,6 +21,7 @@ public :
 	void movePlsWinter();
 	void collisionCode();
 	void deathCollision();
+    bool withInBounds(float x, float y);
 	std::vector<Cell> mapList;
 	Player p;
 	Map map;

@@ -1,0 +1,11 @@
+A and D to move left and right. Space bar to jump.
+
+
+In order to run the make file you need to download the SFML files on linux. 
+
+It should work if you run 
+
+sudo apt-get install libsfml-dev
+
+in the terminal. 
+

@@ -1,1 +1,0 @@
-A and D to move left and right. Space bar to jump.

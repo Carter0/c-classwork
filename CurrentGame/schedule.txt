@@ -1,0 +1,21 @@
+Final
+___ Have a complete level with enemies and platforms. 
+___ Have a start and game over screen. 
+___ Have satisfying player movement and combat. 
+
+
+
+So, we have not managed to complete most of the goals that we set out for ourselves. 
+
+We do have platforms in the game and we sort of have enemies. We have object in the game where if the player touches them they die. 
+
+Player movement and jumping does work. But I wouldn't call them satisfying. 
+
+And finally we do not have a start and game over screen. 
+
+I think there are too many things that went wrong with the project to count, but if I had to list a few. First, we should have just used SDL with the terminal instead of SFML with visual studio. That way development and turn in would have been much easier. 
+
+Also, our group members had a misunderstanding of exactly what the project was supposed to be. 
+
+
+

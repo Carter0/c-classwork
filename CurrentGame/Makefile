@@ -6,7 +6,7 @@ SOURCES= src/main.cpp src/Player.cpp src/Map.cpp src/Platforms.cpp src/GameLogic
 HEADERS= include/Platforms.h include/Player.h include/Map.h include/GameLogic.h include/Cell.h
 
 # test header files
-#TESTS=tests/exampletest.h tests/gameTest.h
+TESTS=tests/exampletest.h tests/gameTest.h tests/mapTest.h tests/playerTest.h tests/platformTest.h
 
 # C++ compile and linker flags
 CPPFLAGS=-O0 -o main
@@ -47,4 +47,5 @@ $(TEST_SOURCES): %.cpp: %.h
 	$(CXXTEST_GEN) --part --error-printer $< -o $@
 
 clean:
-	rm -f main $(MAIN_OBJECTS) $(TEST_OBJECTS)  $(TEST_SOURCES) *~
+	rm -f main test tests/test.cpp $(MAIN_OBJECTS) $(TEST_OBJECTS) tests/test.o $(TEST_SOURCES) *~
+
