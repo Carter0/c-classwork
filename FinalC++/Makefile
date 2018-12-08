@@ -1,4 +1,4 @@
-PROGRAMS= Q-strncat Q-entity
+PROGRAMS= Q-strncat Q-entity Q-color Q-chararray
 
 all: $(PROGRAMS)
 
