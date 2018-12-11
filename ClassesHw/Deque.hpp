@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <memory>
+using namespace std;
 
 // class representing a double-ended queue as a doubly-linked list
 template<typename T>
@@ -90,6 +91,15 @@ void Deque<T>::debug_print() const
 template<typename T>
 void Deque<T>::push_front(const T & t) {
   // TODO: allocate a new node and add it to the front of the list, updating head and tail as needed
+    shared_ptr<Node> newHead = make_shared<Node>();
+    
+    //newHead.item = T;
+    
+    //make new nodes prev the current head
+    newHead->prev->m_head;
+    //make the currenthead the new node
+    m_head->newHead;
+    
 }
 
 template<typename T>

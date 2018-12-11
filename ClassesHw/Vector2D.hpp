@@ -20,13 +20,13 @@ public:
     //Vector2D(): initializes elements to 0
     Vector2D();
     //Vector2D(v): copy construction
-    Vector2D(Vector2D &v);
+    Vector2D(const Vector2D &v);
     //Vector2D(d1, d2): initializes x to d1 and y to d2
     Vector2D(double x, double y);
     //v.setX(d): set x to d
-    void setX(double x);
+    void setX(const double x);
     //v.setY(d): set y to d
-    void setY(double y);
+    void setY(const double y);
     //v.getX(): returns x
     double getX() const;
     //v.getY(): returns y
@@ -34,7 +34,10 @@ public:
     //os << v1: streams x and y separated by a space
     friend ostream& operator<<(std::ostream& os, const Vector2D &v);
     //v1[i]: non-const and const element access; index 0 for x, index 1 for y; throws std::out_of_range on any other index
-    int operator[] (int position) const;
+    double operator[] (int position) const;
+    
+    double& operator[] (int position);
+
     
     //v1 = v2: element-wise assignment
     Vector2D& operator=(const Vector2D& v);
@@ -47,17 +50,30 @@ public:
     //*  -v: element-wise negation
     Vector2D& operator-();
     
+    //Doing scalar multiplication
+    friend Vector2D operator* (Vector2D v1, const double d);
+    friend Vector2D operator* (const double d, Vector2D v1);
+    
+    Vector2D& operator*= (const double d);
+    Vector2D& operator/= (const double d);
+    
+    Vector2D operator/ (const double d);
+
+    
     //v1 += v2, v1 + v2, v1 -= v2, v1 - v2: element-wise addition or subtraction
-    Vector2D& operator+= (Vector2D& v);
-    Vector2D& operator-= (Vector2D& v);
-    Vector2D operator- (Vector2D& v);
-    Vector2D operator+ (const Vector2D v);
+    Vector2D& operator+= (const Vector2D& v);
+    Vector2D& operator-= (const Vector2D& v);
+    Vector2D operator- (const Vector2D& v) const;
+    Vector2D  operator+ (const Vector2D& v) const;
     
     //v *= d, v * d, d * v, v /= d, v / d: element-wise multiplication or division; throws std::invalid_argument on division by 0
-    Vector2D& operator/= (Vector2D& v);
-    Vector2D& operator*= (Vector2D& v);
-    void operator/ (Vector2D& v);
-    void operator* (Vector2D& v);
+    Vector2D& operator/= (const Vector2D& v);
+    Vector2D& operator*= (const Vector2D& v);
+    Vector2D operator/ (const Vector2D& v) const;
+    Vector2D operator* (const Vector2D& v) const;
+    
+    
+
     
     
     

@@ -7,7 +7,7 @@ using namespace std;
 
 int
 main() {
-  /*
+  
   {
     // instantiating IShape doesn't compile
     //unique_ptr<IShape> ps1(new IShape());
@@ -60,5 +60,5 @@ main() {
     //Triangle c1(Vector2D{}, Vector2D{}, Vector2D{});
     //c1 = Triangle(Vector2D{}, Vector2D{}, Vector2D{});
   }
-  */
+  
 }
